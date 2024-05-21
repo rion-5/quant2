@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="header">
+        <h2>이용자 정보</h2>
+    </div>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+        <input class="input-field" type="text" placeholder="Full Name"
+            ngModel [(ngModel)]="user.name" name="fullname" required #fullname="ngModel" />
+        <input class="input-field" type="text" placeholder="Email" ngModel
+            [(ngModel)]="user.email" name="email" required #email="ngModel" />
+        <input class="input-field" type="password" placeholder="Password"
+            ngModel [(ngModel)]="user.password" name="password" required #password="ngModel" />
+        <button class="button" color="primary" [disabled]="userForm.invalid ">수정</button>
+        <button class="button" color="warn" (click)="deleteUser()">회원 탈퇴</button>
+    </form>
+</div>

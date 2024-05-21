@@ -1,0 +1,21 @@
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .charts {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  
+  @media (max-width: 1000px) {
+    .charts {
+      flex-direction: column;
+    }
+  }
+  /* .chart-1, .chart-2 {
+    width: 50%;
+  } */
+  

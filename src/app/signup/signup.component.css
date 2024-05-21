@@ -1,0 +1,42 @@
+.container {
+    width: 300px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .header {
+    text-align: center;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 2px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .button {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    margin: 2px auto;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .button:hover {
+    background-color: #333333;
+  }
+
+  mat-error {
+    color: red;
+    font-size: 0.5em;
+    font-weight: bold;
+  }
+

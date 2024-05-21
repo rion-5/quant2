@@ -1,0 +1,20 @@
+<header class="main-header">
+    <div class="main-nav">
+        <a routerLink="" class="main-header__brand">Quant2</a>
+    </div>
+    <nav class="main-nav">
+        <ul class="main-nav__items">
+            <li class="main-nav__item">
+                <a routerLink="/trade-data">주가조회</a>
+            </li>
+            <li class="main-nav__item"><a *ngIf="!authService.isLoggedIn" routerLink="/signup">회원가입</a>
+                <mat-icon *ngIf="authService.isLoggedIn" fontIcon="account_circle"></mat-icon>
+                <a *ngIf="authService.isLoggedIn" routerLink="/user">{{authService.loginUser.name}}</a>
+            </li>
+            <li class="main-nav__item"><a routerLink="login" *ngIf="!authService.isLoggedIn">로그인</a>
+                <a (click)="logout()" *ngIf="authService.isLoggedIn">로그아웃</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<router-outlet></router-outlet>

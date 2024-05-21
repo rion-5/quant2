@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="header">
+        <h2>로그인</h2>
+    </div>
+    <div class="form">
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+            <input class="input-field" type="text" placeholder="Email" ngModel name="email" required #email="ngModel" />
+            <input class="input-field" type="password" placeholder="Password" ngModel name="password" required #password="ngModel" />
+            <mat-error *ngIf="login && !login.success">{{login.message}}</mat-error>
+            <button class="button" [disabled]="loginForm.invalid">Submit</button>
+        </form>
+    </div>
+</div>

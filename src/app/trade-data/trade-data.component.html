@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="header">
+    <h2>Stock Trade Data</h2>
+  </div>
+  <div class="form">
+    <form class="form-group" #tickerForm="ngForm" (ngSubmit)="onSubmit(tickerForm)">
+      <input class="input-field" type="text" placeholder="Ticker" ngModel name="ticker" required />
+      <input class="input-field" type="date" placeholder="시작일" ngModel name="from_date" required />
+      <input class="input-field" type="date" placeholder="종료일" ngModel name="to_date" required
+        pattern="\d{4}-\d{2}-\d{2}" />
+      <button class="button" [disabled]="tickerForm.invalid">Submit</button>
+    </form>
+  </div>
+
+  <div class="result">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="Trade-Date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Trade Date </th>
+        <td mat-cell *matCellDef="let element">{{element.trading_date}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="SYMBOL">
+        <th mat-header-cell *matHeaderCellDef>Ticker</th>
+        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="OPEN">
+        <th mat-header-cell *matHeaderCellDef>OPEN</th>
+        <td mat-cell *matCellDef="let element"> {{element.open}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="HIGH">
+        <th mat-header-cell *matHeaderCellDef>HIGH</th>
+        <td mat-cell *matCellDef="let element"> {{element.high}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="LOW">
+        <th mat-header-cell *matHeaderCellDef>LOW</th>
+        <td mat-cell *matCellDef="let element"> {{element.low}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="CLOSE">
+        <th mat-header-cell *matHeaderCellDef>CLOSE</th>
+        <td mat-cell *matCellDef="let element"> {{element.close}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="VOLUME">
+        <th mat-header-cell *matHeaderCellDef>VOLUME</th>
+        <td mat-cell *matCellDef="let element"> {{element.volume}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="ADJUSTED">
+        <th mat-header-cell *matHeaderCellDef>ADJUSTED</th>
+        <td mat-cell *matCellDef="let element"> {{element.adjusted}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Insert-Date">
+        <th mat-header-cell *matHeaderCellDef>Insert Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.insert_date}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator #paginator [pageSizeOptions]="[10, 20, 50]" showFirstLastButtons
+      aria-label="Select page of periodic elements">
+    </mat-paginator>
+    <button mat-icon-button color="primary" aria-label="XLSX File Download">
+      <mat-icon>file_download</mat-icon>
+    </button>
+    <!-- <button mat-button (click)="onSave()">Download xlsx</button> -->
+  </div>
+
+</div>
