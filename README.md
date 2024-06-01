@@ -27,7 +27,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## sub path build
-ng build --base-href /quant
+ng build --base-href /quant/ --deploy-url /quant/
 
 ## index.html edit
 &lt;base href="/quant"&gt;
