@@ -29,8 +29,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## sub path build
 ng build --base-href /quant/ --deploy-url /quant/
 
-## index.html edit
-&lt;base href="/quant"&gt;
 
 ## execute
 ng serve or npm start
