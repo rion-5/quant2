@@ -30,7 +30,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ng build --base-href /quant
 
 ## index.html edit
-<base href="/quant">
+&lt;base href="/quant"&gt;
 
 ## execute
 ng serve or npm start
