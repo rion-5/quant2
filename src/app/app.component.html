@@ -7,6 +7,9 @@
             <li class="main-nav__item">
                 <a routerLink="/trade-data">주가조회</a>
             </li>
+            <li class="main-nav__item">
+                <a routerLink="/d3-chart">d3-chart</a>
+            </li>
             <li class="main-nav__item"><a *ngIf="!authService.isLoggedIn" routerLink="/signup">회원가입</a>
                 <mat-icon *ngIf="authService.isLoggedIn" fontIcon="account_circle"></mat-icon>
                 <a *ngIf="authService.isLoggedIn" routerLink="/user">{{authService.loginUser.name}}</a>

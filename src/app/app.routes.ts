@@ -5,9 +5,11 @@ import { LoginComponent } from './login/login.component';
 import { authGuard } from './guard/auth.guard';
 import { SignupComponent } from './signup/signup.component';
 import { UserComponent } from './user/user.component';
+import { D3ChartComponent } from './d3-chart/d3-chart.component';
 export const routes: Routes = [
     //{ path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: '', component: HomeComponent },
+    { path: 'd3-chart', component: D3ChartComponent },
     { path: 'trade-data',canActivate: [authGuard], component: TradeDataComponent },
     //{ path: 'trade-data', component: TradeDataComponent },
 
