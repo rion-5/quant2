@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, AfterViewInit  } from '@angular/core';
 import * as d3 from 'd3';
 
 @Component({
@@ -8,7 +8,7 @@ import * as d3 from 'd3';
   templateUrl: './map.component.html',
   styleUrl: './map.component.css'
 })
-export class MapComponent implements OnInit{
+export class MapComponent implements AfterViewInit {
 
   private svg: any;
   private width = 800;
@@ -18,7 +18,7 @@ export class MapComponent implements OnInit{
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.createSvg();
     this.drawMap();
   }
